@@ -1,0 +1,41 @@
+all 4 generators and their differences
+finder methods- orderby,fetch only top 2 records, to fetch only few columns, / 
+-- fetch with projections - class and interfaced based projections (when to use which) - advantages and disadvantages of each
+pagination and sorting using jpa repository findAll(Pageable p) , findAll(Sort s)
+annotations - @modifying
+@Query(jpql)
+@Query(DML)
+@Modifying which is best than fetch and update @Transactional
+@Query(native sql)
+
+inheritance mapping strategies - 
+single table strategy -- table only for parent
+table per class strategy - table only for childs
+joined - table for both parent and childs
+
+association relationships examples- 1tomany annotations
+@OneToMany(mappedBy="java field name in child entity")
+@JoinColumn- 
+What is cascading in hibernate - 1)	if u save parent, then childs also will be saved automatically 
+all cascade types
+eager and lazy loading in 1-many
+
+performance optimization
+1) lazy loading
+
+object states in hibernate - transient, persistent, detached, removed
+caching in hibernate - session cache vs session factory cache --- EH cache
+
+@Test
+@Transactional
+public void m1(){
+
+public void findByName();
+public void findByName();
+since we already have  transaction , both the finder methods will use a existing txn
+1st finder metho. will hit db and stores data in session, 
+2nd time also - same finder method, this time it will fetch from session level cache
+}
+
+
+
