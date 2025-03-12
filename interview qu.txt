@@ -25,6 +25,8 @@ performance optimization
 
 object states in hibernate - transient, persistent, detached, removed
 caching in hibernate - session cache vs session factory cache --- EH cache
+crudrepo.find() - get it from db save obj into ses, ses fac cache
+crudrepo.save() - will just push the data into ses cache/ pers context - it wont save immmediately, it will save only on txn.commit()
 
 @Test
 @Transactional
@@ -36,6 +38,9 @@ since we already have  transaction , both the finder methods will use a existing
 1st finder metho. will hit db and stores data in session, 
 2nd time also - same finder method, this time it will fetch from session level cache
 }
+
+
+obje state , will crudRepo.save() fires insert query  immediately? what is flush?
 
 
 

@@ -15,5 +15,6 @@ drop table hero;
 
 
 delete from vendor where id in(52,53) ;
+delete from bankaccount where accno in(3,4);
 
 delete from company_vendors where vendor_id in(52,53)
